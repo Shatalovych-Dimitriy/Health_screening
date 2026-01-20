@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медичний Портал</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Landing Page -->
+        <section id="landing-page" class="landing-page">
+            <div class="landing-content">
+                <div class="brand-large">
+                    <svg class="logo-large" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 21.6001C17.3019 21.6001 21.6 17.302 21.6 12.0001C21.6 6.69815 17.3019 2.40009 12 2.40009C6.69807 2.40009 2.4 6.69815 2.4 12.0001C2.4 17.302 6.69807 21.6001 12 21.6001Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7.2002 12H16.8002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M12 7.20007V16.8001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <h1>HealthPortal</h1>
+                    <p class="subtitle">Оберіть режим роботи</p>
+                </div>
+
+                <div class="role-selection">
+                    <button class="role-card" onclick="enterApp('doctors')">
+                        <div class="icon-box">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 14C20.6569 14 22 12.6569 22 11C22 9.34315 20.6569 8 19 8C17.3431 8 16 9.34315 16 11C16 12.6569 17.3431 14 19 14Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M19 22V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5 21V19C5 15.6863 8.13401 13 12 13C15.866 13 19 15.6863 19 19V21"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3>Для Лікарів</h3>
+                        <p>Доступ до протоколів тестування</p>
+                    </button>
+
+                    <button class="role-card" onclick="enterApp('patients')">
+                        <div class="icon-box">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3>Для Пацієнтів</h3>
+                        <p>Опитування та діагностика</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div id="main-app" class="hidden">
+            <header class="main-header">
+                <div class="brand">
+                    <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 21.6001C17.3019 21.6001 21.6 17.302 21.6 12.0001C21.6 6.69815 17.3019 2.40009 12 2.40009C6.69807 2.40009 2.4 6.69815 2.4 12.0001C2.4 17.302 6.69807 21.6001 12 21.6001Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7.2002 12H16.8002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M12 7.20007V16.8001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <h1>HealthPortal</h1>
+                </div>
+                <nav class="tab-nav">
+                    <button class="tab-btn active" data-tab="doctors">Для Лікарів</button>
+                    <button class="tab-btn" data-tab="patients">Для Пацієнтів</button>
+                </nav>
+            </header>
+
+            <main class="content-area">
+                <!-- Doctor Section -->
+                <section id="doctors" class="tab-content active">
+                    <div class="content-wrapper">
+                        <div class="hero-text">
+                            <h2>Професійна підтримка</h2>
+                            <p>Швидкий доступ до протоколів тестування та діагностики для медичного персоналу.</p>
+                        </div>
+                        <div class="action-container" id="doctor-action">
+                            <button class="cta-btn" onclick="startTest('doctor')">
+                                <span>Почати тестування</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Patient Section -->
+                <section id="patients" class="tab-content">
+                    <div class="content-wrapper">
+                        <div class="hero-text">
+                            <h2>Турбота про ваше здоров'я</h2>
+                            <p>Пройдіть попереднє опитування для покращення якості надання медичних послуг.</p>
+                        </div>
+                        <div class="action-container" id="patient-action">
+                            <button class="cta-btn" onclick="startTest('patient')">
+                                <span>Почати тестування</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
